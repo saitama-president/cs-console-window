@@ -1,9 +1,12 @@
 #! /bin/bash
 
 mcs \
-./main.cs \
+./test.cs \
+./Common.cs \
+./Screen.cs \
 ./EscapeSequence.cs \
-./Window.cs ;
+./Window.cs \
+-out:test.exe;
 
 
 if [ $? -lt 0 ]
@@ -11,5 +14,5 @@ then
   echo "ERROR";
 else
   echo "OK";
-  mono main.exe;
+  mono test.exe;
 fi
